@@ -1,9 +1,5 @@
-#!/usr/bin/awk -f
+#! /usr/bin/awk -f 
 
-BEGIN {
-   FS=","
-}
-#currently only works for 1 file
 {
 	if(FNR!=1)
 	{    
@@ -16,10 +12,10 @@ BEGIN {
 
 	if(getline==0)
 	{
-		print "File: "FILENAME
+		print "File: " FILENAME
    	 	#Use for loop to print out information
 		
-        for(year in yearly_Total)
+   	 	for(year in yearly_Total)
    	 	{
 			#percentages are less than 100%
 			printf "%d\n",year
@@ -121,4 +117,3 @@ BEGIN {
 		}	
 	}
 }
-
